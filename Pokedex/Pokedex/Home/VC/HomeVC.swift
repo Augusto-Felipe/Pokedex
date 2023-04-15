@@ -25,8 +25,11 @@ class HomeVC: UIViewController {
 
     var selectedPokemon: Pokemon?
     
+    var alert: Alert?
+    
     override func loadView() {
         self.homeScreen = HomeScreen()
+        self.alert = Alert(controller: self)
         pokemonManager.delegate = self
         homeScreen?.configCollectionViewDelegate(delegate: self, datasource: self)
         self.homeScreen?.navView.configTextFieldDelegate(delegate: self)
@@ -57,25 +60,6 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         
         // Crio minha célula
         let cell: PokemonCollectionViewCell? = collectionView.dequeueReusableCell(withReuseIdentifier: PokemonCollectionViewCell.identifier, for: indexPath) as? PokemonCollectionViewCell
-//
-//        cell?.pokemonCollectionViewCellScreen.pokemonName.text = pokemonList[indexPath.row].name.capitalized
-//
-//        if let urlString = pokemonList[indexPath.row].imageUrl as? String {
-//            if let imagemUrl = URL(string: urlString) {
-//                DispatchQueue.global().async {
-//                    guard let dataImage = try? Data(contentsOf: imagemUrl) else
-//                    { return }
-//                        let image = UIImage(data: dataImage)
-//                        DispatchQueue.main.async {
-//                            cell?.pokemonCollectionViewCellScreen.pokemonImage.image = image
-//                        }
-//                    }
-//                }
-//
-//            }
-//
-//
-//        return cell ?? UICollectionViewCell()
         
         
         // Crio minha célula com o pokemon retornado
@@ -83,6 +67,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             cell?.pokemonCollectionViewCellScreen.pokemonName.text = pokemonSearch?.name.capitalized
             cell?.pokemonCollectionViewCellScreen.pokemonType.text = pokemonSearch?.type.capitalized
         }
+        
         if let urlString = pokemonSearch?.imageUrl as? String {
             if let imagemUrl = URL(string: urlString) {
                 DispatchQueue.global().async {
@@ -193,10 +178,9 @@ extension HomeVC: UITextFieldDelegate {
         if textField.hasText {
             pokemonManager.findPokemon(name: homeScreen?.navView.searchTextField.text ?? "")
         } else {
-            
-            DispatchQueue.main.async {
-                self.homeScreen?.collectionview.reloadData()
-            }
+            pokemonSearch = nil
+            self.pokemonManager.pokemonAPIRequest()
+            self.homeScreen?.collectionview.reloadData()
         }
     }
 }

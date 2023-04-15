@@ -17,7 +17,6 @@ struct PokemonManager {
     
     var delegate: PokemonManagerProtocol?
     
-            
     public func pokemonAPIRequest() {
         
         let apiUrl = URL(string: "https://pokedex-bb36f.firebaseio.com/pokemon.json")
