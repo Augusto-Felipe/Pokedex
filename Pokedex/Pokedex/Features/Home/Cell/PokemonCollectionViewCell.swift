@@ -21,7 +21,7 @@ class PokemonCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         self.configElements()
         self.configConstrains()
-        
+        self.configScreen()
     }
     
     required init?(coder: NSCoder) {
@@ -30,6 +30,11 @@ class PokemonCollectionViewCell: UICollectionViewCell {
     
     private func configElements() {
         self.contentView.addSubview(self.pokemonCollectionViewCellScreen)
+    }
+    
+    private func configScreen() {
+        pokemonCollectionViewCellScreen.clipsToBounds = true
+        pokemonCollectionViewCellScreen.layer.cornerRadius = 20
     }
     
     private func configConstrains() {
