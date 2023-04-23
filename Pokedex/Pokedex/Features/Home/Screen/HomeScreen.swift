@@ -31,7 +31,8 @@ class HomeScreen: UIView {
         cv.showsVerticalScrollIndicator = false
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
         layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 25, bottom: 0, right: 25
+        )
         layout.minimumInteritemSpacing = 10
         cv.setCollectionViewLayout(layout, animated: true)
         return cv
