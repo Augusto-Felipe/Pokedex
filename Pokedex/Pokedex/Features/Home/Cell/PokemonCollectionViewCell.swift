@@ -37,8 +37,11 @@ class PokemonCollectionViewCell: UICollectionViewCell {
         pokemonCollectionViewCellScreen.layer.cornerRadius = 20
     }
     
-    private func configConstrains() {
+    public func setupCell() {
         
+    }
+    
+    private func configConstrains() {
         NSLayoutConstraint.activate([
             
             self.pokemonCollectionViewCellScreen.topAnchor.constraint(equalTo: self.topAnchor),
