@@ -111,6 +111,7 @@
 		507A280F29DC6B4D003DAD09 /* Pokemon Details */ = {
 			isa = PBXGroup;
 			children = (
+				50CEF0DD2A39042400CC760C /* New Group */,
 				502301D029F5DCB4005D60CD /* VC */,
 			);
 			path = "Pokemon Details";
@@ -159,6 +160,13 @@
 				50AEF0242A37DD3400FE8211 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		50CEF0DD2A39042400CC760C /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		50D2C0F929EAE87100EFA6A8 /* Alert */ = {
