@@ -79,9 +79,7 @@ class NavView: UIView {
     }
     
     private func configConstraints() {
-        
         NSLayoutConstraint.activate([
-            
             self.viewBackground.topAnchor.constraint(equalTo: self.topAnchor),
             self.viewBackground.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.viewBackground.trailingAnchor.constraint(equalTo: self.trailingAnchor),
@@ -96,7 +94,6 @@ class NavView: UIView {
             self.searchTextField.leadingAnchor.constraint(equalTo: self.navBar.leadingAnchor, constant: 25),
             self.searchTextField.widthAnchor.constraint(equalToConstant: 250),
             self.searchTextField.heightAnchor.constraint(equalToConstant: 40),
-            
             
             self.stackView.trailingAnchor.constraint(equalTo: self.navBar.trailingAnchor, constant: -30),
             self.stackView.centerYAnchor.constraint(equalTo: self.navBar.centerYAnchor),

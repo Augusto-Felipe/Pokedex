@@ -10,8 +10,7 @@ import AlamofireImage
 
 class PokemonCollectionViewCell: UICollectionViewCell {
     
-    static let identifier: String = "PokemonCollectionViewCell"
-    
+    static let identifier: String = String(describing: PokemonCollectionViewCell.self)
     lazy var screen: PokemonCollectionViewCellScreen = {
         let view = PokemonCollectionViewCellScreen()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -47,7 +46,6 @@ class PokemonCollectionViewCell: UICollectionViewCell {
     
     private func configConstrains() {
         NSLayoutConstraint.activate([
-            
             self.screen.topAnchor.constraint(equalTo: self.topAnchor),
             self.screen.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.screen.trailingAnchor.constraint(equalTo: self.trailingAnchor),

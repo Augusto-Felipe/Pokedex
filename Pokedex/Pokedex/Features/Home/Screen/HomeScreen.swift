@@ -31,8 +31,7 @@ class HomeScreen: UIView {
         cv.showsVerticalScrollIndicator = false
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
         layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 25, bottom: 0, right: 25
-        )
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 25, bottom: 0, right: 25)
         layout.minimumInteritemSpacing = 10
         cv.setCollectionViewLayout(layout, animated: true)
         return cv
@@ -62,9 +61,7 @@ class HomeScreen: UIView {
     }
     
     private func configConstrains() {
-        
         NSLayoutConstraint.activate([
-        
             self.navView.topAnchor.constraint(equalTo: self.topAnchor),
             self.navView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.navView.trailingAnchor.constraint(equalTo: self.trailingAnchor),

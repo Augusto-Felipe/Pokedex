@@ -31,7 +31,6 @@ class PokemonCollectionViewCellScreen: UIView {
     lazy var pokemonImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(systemName: "person")
         image.contentMode = .scaleAspectFit
         return image
     }()
@@ -39,7 +38,6 @@ class PokemonCollectionViewCellScreen: UIView {
     lazy var pokemonName: UILabel = {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
-        lb.text = "Pikachu"
         lb.textAlignment = .center
         lb.clipsToBounds = true
         lb.layer.cornerRadius = 8
@@ -51,7 +49,6 @@ class PokemonCollectionViewCellScreen: UIView {
     lazy var pokemonType: UILabel = {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
-        lb.text = "Poison"
         lb.textAlignment = .center
         return lb
     }()
@@ -67,13 +64,6 @@ class PokemonCollectionViewCellScreen: UIView {
     }
     
     private func addElements() {
-//        self.addSubview(stackView)
-//        self.stackView.addArrangedSubview(self.pokemonImage)
-//        self.stackView.addArrangedSubview(self.pokemonName)
-//        self.stackView.addArrangedSubview(self.pokemonType)
-//        pokemonImage.heightAnchor.constraint(equalTo: pokemonName.heightAnchor, multiplier: 3.0).isActive = true
-        
-        
         self.addSubview(cardView)
         cardView.addSubview(pokemonImage)
         cardView.addSubview(pokemonName)
@@ -81,15 +71,7 @@ class PokemonCollectionViewCellScreen: UIView {
     }
     
     private func configConstrains() {
-        
         NSLayoutConstraint.activate([
-            
-//            self.stackView.topAnchor.constraint(equalTo: self.topAnchor),
-//            self.stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-//            self.stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-//            self.stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            
-            
             self.cardView.topAnchor.constraint(equalTo: self.topAnchor),
             self.cardView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             self.cardView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
