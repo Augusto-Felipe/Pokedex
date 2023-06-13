@@ -7,7 +7,26 @@
 
 import Foundation
 
+// MARK: - Pokemon
 struct Pokemon: Codable {
-    var name: String?
-    var url: String?
+    var attack, defense: Int?
+    var description: String?
+    var evolutionChain: [EvolutionChain]?
+    var height, id: Int?
+    var imageURL: String?
+    var name, type: String?
+    var weight, pokemonDefense: Int?
+
+    enum CodingKeys: String, CodingKey {
+        case attack, defense, description, evolutionChain, height, id
+        case imageURL = "imageUrl"
+        case name, type, weight
+        case pokemonDefense = "defense:"
+    }
 }
+
+// MARK: - EvolutionChain
+struct EvolutionChain: Codable {
+    var id, name: String?
+}
+

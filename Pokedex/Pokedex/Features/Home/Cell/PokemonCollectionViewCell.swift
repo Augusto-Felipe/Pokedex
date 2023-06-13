@@ -39,7 +39,7 @@ class PokemonCollectionViewCell: UICollectionViewCell {
     }
     
     public func setupCell(pokemon: Pokemon) {
-        if let urlPokemon: URL = URL(string: pokemon.url ?? "") {
+        if let urlPokemon: URL = URL(string: pokemon.imageURL ?? "") {
             screen.pokemonImage.af.setImage(withURL: urlPokemon, placeholderImage: UIImage(named: "threeButtons"))
         }
         screen.pokemonName.text = pokemon.name
