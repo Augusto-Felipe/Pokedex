@@ -22,8 +22,8 @@ class HomeViewModel {
         self.delegate = delegate
     }
     
-    var getPostList: [Pokemon] {
-        pokemonList
+    public func loadCurrentPokemon(indexPath: IndexPath) -> Pokemon {
+        return pokemonList[indexPath.row]
     }
     
     var numberOfItens: Int {

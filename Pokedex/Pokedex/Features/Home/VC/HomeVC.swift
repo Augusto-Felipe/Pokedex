@@ -15,15 +15,15 @@ class HomeVC: UIViewController {
     var alert: Alert?
     
     override func loadView() {
-        self.alert = Alert(controller: self)
-        self.homeScreen?.navView.configTextFieldDelegate(delegate: self)
+        self.homeScreen = HomeScreen()
         self.view = self.homeScreen
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.homeScreen = HomeScreen()
         viewModel.delegate(delegate: self)
+        self.alert = Alert(controller: self)
+        self.homeScreen?.navView.configTextFieldDelegate(delegate: self)
         viewModel.fetchAllRequest()
     }
 }
@@ -31,7 +31,7 @@ class HomeVC: UIViewController {
 extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: PokemonCollectionViewCell? = collectionView.dequeueReusableCell(withReuseIdentifier: PokemonCollectionViewCell.identifier, for: indexPath) as? PokemonCollectionViewCell
-        
+        cell?.setupCell(pokemon: viewModel.loadCurrentPokemon(indexPath: indexPath))
         return cell ?? UICollectionViewCell()
     }
     
@@ -50,9 +50,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
 
 extension HomeVC: HomeViewModelProtocol {
     func sucess() {
-        DispatchQueue.main.async {
-            self.homeScreen?.configCollectionViewDelegate(delegate: self, datasource: self)
-        }
+        self.homeScreen?.configCollectionViewDelegate(delegate: self, datasource: self)
     }
     
     func error() {

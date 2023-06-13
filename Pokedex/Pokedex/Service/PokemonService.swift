@@ -12,7 +12,6 @@ import Alamofire
 struct PokemonService {
     
     func getPokemonDataAlamofire(completion: @escaping (PokemonData?, Error?) -> Void) {
-        
         let url: String = "https://run.mocky.io/v3/d812938c-132b-41f0-b602-18cbc11d3f96"
         
         AF.request(url, method: .get).validate().responseDecodable(of: PokemonData.self) { response in
