@@ -8,6 +8,9 @@
 import Foundation
 import Alamofire
 
+enum ErrorProfile: Swift.Error {
+    case errorRequest(AFError)
+}
 
 struct PokemonService {
     func getPokemonDataAlamofire(completion: @escaping (PokemonData?, Error?) -> Void) {
@@ -23,7 +26,7 @@ struct PokemonService {
                 completion(sucess, nil)
             case .failure(let error):
                 print("ERROR -> \(#function)")
-                completion(nil, error)
+                completion(nil, ErrorProfile.errorRequest(error))
             }
         }
     }
