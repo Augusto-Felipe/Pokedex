@@ -25,6 +25,7 @@
 		50F6A32D29D3604300CB570D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F6A32B29D3604300CB570D /* LaunchScreen.storyboard */; };
 		50F6A33829D3613000CB570D /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6A33729D3613000CB570D /* HomeScreen.swift */; };
 		50F6A33B29D3616700CB570D /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6A33A29D3616700CB570D /* NavView.swift */; };
+		50F7C53B2A3A462D0075EF00 /* DetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F7C53A2A3A462D0075EF00 /* DetailsScreen.swift */; };
 		CDD8F3D40FA7BE71D41766F6 /* Pods_Pokedex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA714F13D579668E56B873D /* Pods_Pokedex.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		50F6A32E29D3604300CB570D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50F6A33729D3613000CB570D /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		50F6A33A29D3616700CB570D /* NavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
+		50F7C53A2A3A462D0075EF00 /* DetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreen.swift; sourceTree = "<group>"; };
 		5EA714F13D579668E56B873D /* Pods_Pokedex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pokedex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -78,7 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				50F6A33429D360F800CB570D /* Home */,
-				507A280F29DC6B4D003DAD09 /* Pokemon Details */,
+				507A280F29DC6B4D003DAD09 /* Details */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -108,13 +110,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		507A280F29DC6B4D003DAD09 /* Pokemon Details */ = {
+		507A280F29DC6B4D003DAD09 /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				50CEF0DD2A39042400CC760C /* New Group */,
+				50F7C5392A3A450C0075EF00 /* Screen */,
 				502301D029F5DCB4005D60CD /* VC */,
 			);
-			path = "Pokemon Details";
+			path = Details;
 			sourceTree = "<group>";
 		};
 		50A428A729D8C28A00BA97F0 /* Cell */ = {
@@ -160,13 +162,6 @@
 				50AEF0242A37DD3400FE8211 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		50CEF0DD2A39042400CC760C /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		50D2C0F929EAE87100EFA6A8 /* Alert */ = {
@@ -246,6 +241,14 @@
 			path = NavView;
 			sourceTree = "<group>";
 		};
+		50F7C5392A3A450C0075EF00 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				50F7C53A2A3A462D0075EF00 /* DetailsScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
 		57E08C2769828DE9ED25AA43 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,7 +277,7 @@
 				50F6A31929D3604100CB570D /* Sources */,
 				50F6A31A29D3604100CB570D /* Frameworks */,
 				50F6A31B29D3604100CB570D /* Resources */,
-				75FBED814EB0D8DD714258A2 /* [CP] Embed Pods Frameworks */,
+				14B0456E2021594F9FD4E48A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -293,7 +296,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					50F6A31C29D3604100CB570D = {
 						CreatedOnToolsVersion = 14.2;
@@ -332,7 +335,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		75FBED814EB0D8DD714258A2 /* [CP] Embed Pods Frameworks */ = {
+		14B0456E2021594F9FD4E48A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -382,6 +385,7 @@
 				50F6A32529D3604100CB570D /* HomeVC.swift in Sources */,
 				50F6A32129D3604100CB570D /* AppDelegate.swift in Sources */,
 				50F6A33B29D3616700CB570D /* NavView.swift in Sources */,
+				50F7C53B2A3A462D0075EF00 /* DetailsScreen.swift in Sources */,
 				504E9CF829D9E02D00F1795C /* PokemonService.swift in Sources */,
 				504E9CFB29D9FA8D00F1795C /* PokemonData.swift in Sources */,
 				50D2C0FB29EAE89700EFA6A8 /* Alert.swift in Sources */,
@@ -446,6 +450,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -460,7 +465,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -506,6 +511,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -514,7 +520,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -532,12 +538,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pokedex/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -562,12 +570,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pokedex/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
