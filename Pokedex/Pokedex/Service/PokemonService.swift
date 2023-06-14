@@ -10,7 +10,6 @@ import Alamofire
 
 
 struct PokemonService {
-    
     func getPokemonDataAlamofire(completion: @escaping (PokemonData?, Error?) -> Void) {
         let url: String = "https://run.mocky.io/v3/3d1b35c4-205d-4547-99f1-bf1d3df95bd2"
         
