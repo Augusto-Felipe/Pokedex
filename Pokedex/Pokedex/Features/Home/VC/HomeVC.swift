@@ -57,7 +57,7 @@ extension HomeVC: HomeViewModelProtocol {
         
     }
     
-    func pokemonFound() {
+    func reloadCollectionView() {
         self.homeScreen?.collectionview.reloadData()
     }
     

@@ -10,14 +10,14 @@ import Foundation
 protocol HomeViewModelProtocol: AnyObject {
     func sucess()
     func error()
-    func pokemonFound()
+    func reloadCollectionView()
 }
 
 class HomeViewModel {
     
     private var service: PokemonService = PokemonService()
     private var pokemonList: [Pokemon] = []
-    private var searchPokemonList: [Pokemon] = []
+    private var filteredPokemonList: [Pokemon] = []
     private weak var delegate: HomeViewModelProtocol?
     
     public func delegate(delegate: HomeViewModelProtocol) {
@@ -25,31 +25,21 @@ class HomeViewModel {
     }
     
     public func loadCurrentPokemon(indexPath: IndexPath) -> Pokemon {
-        return pokemonList[indexPath.row]
+        return filteredPokemonList[indexPath.row]
+    }
+    
+    var numberOfItens: Int {
+        filteredPokemonList.count
     }
     
     func searchPokemon(with searchText: String) {
-        if pokemonList.contains(where: {$0.name == searchText}) {
-            // it exists, do something
-            print("achei")
+        if searchText.isEmpty {
+            filteredPokemonList = pokemonList
         } else {
-            //item could not be found
-            print("nao achei")
+            filteredPokemonList = pokemonList.filter { ($0.name?.lowercased() ?? "").hasPrefix(searchText.lowercased()) }
         }
         
-        if let searchedPokemon = pokemonList.first(where: {$0.name == searchText}) {
-            // do something with foo
-            pokemonList = [searchedPokemon]
-            self.delegate?.pokemonFound()
-        } else if searchText.isEmpty {
-            
-        }
-        
-    }
-    
-    
-    var numberOfItens: Int {
-        pokemonList.count
+        self.delegate?.reloadCollectionView()
     }
     
     public func fetchAllRequest() {
@@ -58,6 +48,7 @@ class HomeViewModel {
                 self.delegate?.error()
             } else {
                 self.pokemonList = pokemonData?.pokemon ?? []
+                self.filteredPokemonList = self.pokemonList
                 self.delegate?.sucess()
             }
         }
