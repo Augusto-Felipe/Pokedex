@@ -45,15 +45,6 @@ class NavView: UIView {
         tf.autocapitalizationType = .none
         return tf
     }()
-    
-    lazy var groupButton: UIButton = {
-        let bt = UIButton()
-        bt.translatesAutoresizingMaskIntoConstraints = false
-        bt.setImage(UIImage(named: "search")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        bt.tintColor = .white
-        return bt
-    }()
-    
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -69,13 +60,11 @@ class NavView: UIView {
         self.searchTextField.delegate = delegate
     }
     
-    
     private func addElements() {
         self.addSubview(self.viewBackground)
         self.viewBackground.addSubview(self.navBar)
         self.navBar.addSubview(self.searchTextField)
         self.navBar.addSubview(self.stackView)
-        self.stackView.addArrangedSubview(self.groupButton)
     }
     
     private func configConstraints() {
