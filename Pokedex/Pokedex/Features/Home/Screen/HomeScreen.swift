@@ -76,8 +76,6 @@ class HomeScreen: UIView {
             self.backgroundImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 10),
             self.backgroundImage.heightAnchor.constraint(equalToConstant: 80),
             self.backgroundImage.widthAnchor.constraint(equalToConstant: 80),
-            
-            
         ])
     }
 }

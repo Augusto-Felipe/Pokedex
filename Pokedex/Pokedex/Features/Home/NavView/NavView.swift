@@ -88,7 +88,6 @@ class NavView: UIView {
             self.stackView.centerYAnchor.constraint(equalTo: self.navBar.centerYAnchor),
             self.stackView.widthAnchor.constraint(equalToConstant: 70),
             self.stackView.heightAnchor.constraint(equalToConstant: 30),
-            
         ])
     }
 }

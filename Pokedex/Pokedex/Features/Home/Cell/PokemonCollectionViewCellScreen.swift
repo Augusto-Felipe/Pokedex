@@ -35,7 +35,7 @@ class PokemonCollectionViewCellScreen: UIView {
         return image
     }()
     
-    lazy var pokemonName: UILabel = {
+    lazy var pokemonNameLabel: UILabel = {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.textAlignment = .center
@@ -46,7 +46,7 @@ class PokemonCollectionViewCellScreen: UIView {
         return lb
     }()
     
-    lazy var pokemonType: UILabel = {
+    lazy var pokemonTypeLabel: UILabel = {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.textAlignment = .center
@@ -66,8 +66,8 @@ class PokemonCollectionViewCellScreen: UIView {
     private func addElements() {
         self.addSubview(cardView)
         cardView.addSubview(pokemonImage)
-        cardView.addSubview(pokemonName)
-        cardView.addSubview(pokemonType)
+        cardView.addSubview(pokemonNameLabel)
+        cardView.addSubview(pokemonTypeLabel)
     }
     
     private func configConstrains() {
@@ -82,12 +82,11 @@ class PokemonCollectionViewCellScreen: UIView {
             self.pokemonImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 10),
             self.pokemonImage.heightAnchor.constraint(equalToConstant: 150),
             
-            self.pokemonName.topAnchor.constraint(equalTo: self.pokemonImage.bottomAnchor, constant: 10),
-            self.pokemonName.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            self.pokemonNameLabel.topAnchor.constraint(equalTo: self.pokemonImage.bottomAnchor, constant: 10),
+            self.pokemonNameLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
-            self.pokemonType.topAnchor.constraint(equalTo: self.pokemonName.bottomAnchor, constant: 10),
-            self.pokemonType.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            
+            self.pokemonTypeLabel.topAnchor.constraint(equalTo: self.pokemonNameLabel.bottomAnchor, constant: 10),
+            self.pokemonTypeLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
         ])
     }
 }

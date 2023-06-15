@@ -41,7 +41,7 @@ class PokemonCollectionViewCell: UICollectionViewCell {
         if let urlPokemon: URL = URL(string: pokemon.imageURL ?? "") {
             screen.pokemonImage.af.setImage(withURL: urlPokemon, placeholderImage: UIImage(named: "threeButtons"))
         }
-        screen.pokemonName.text = pokemon.name
+        screen.pokemonNameLabel.text = pokemon.name?.capitalized
     }
     
     private func configConstrains() {
@@ -52,5 +52,4 @@ class PokemonCollectionViewCell: UICollectionViewCell {
             self.screen.bottomAnchor.constraint(equalTo: self.bottomAnchor),
         ])
     }
-    
 }
