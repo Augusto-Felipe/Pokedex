@@ -1,18 +1,50 @@
 # Pokedex
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/devsuperior/sds1-wmazoni/blob/master/LICENSE) 
 
-## About
+# Sobre o projeto
 
-Through this app, users can obtain information about the various types of Pokemon, such as name, type, abilities, evolutions, and detailed descriptions.
+Este aplicativo foi desenvolvido com o propósito de auxiliar os usuários a obter informações abrangentes sobre uma variedade de Pokémons, incluindo seus nomes, tipos, habilidades, evoluções e descrições detalhadas.
 
-## What you will create
-<div style="display: flex; justify-content: center;">
-  <img src="https://user-images.githubusercontent.com/107811979/235202495-53d2f34f-7da1-45ad-a923-83339192e2ba.png" width="400">
-</div>
+Com este aplicativo, o usuário tem acesso a informações essenciais sobre vários pokemons diretamente na palma de sua mão.
 
-## Technologies used
+## Layout
+<p align="center">
+  <img src="https://github.com/Augusto-Felipe/Pokedex/assets/107811979/bbac2c47-1263-4948-bcf5-ec9cbd84c16d" width="300" />
+  <img src="https://github.com/Augusto-Felipe/Pokedex/assets/107811979/b4eaf07f-74ba-4ef2-b0ac-c8dfa4f627ae" width="300" />
+</p>
 
-* UIKit
-* UICollectionView
-* ViewCode
-* Rest API
-* SnapKit 
+# Tecnologias utilizadas
+- Swift
+- UIKit
+- CollectionView
+- ViewCode
+- API Restful
+- Snapkit
+- MVVM
+
+# Como executar o projeto
+## Requisitos:
+
+Um computador com macOS.
+Xcode instalado no seu Mac.
+Um dispositivo iOS ou um simulador iOS configurado.
+
+## Configuração:
+Clone ou faça o download do repositório do projeto iOS.
+Abra o projeto no Xcode.
+
+## Compilação:
+No Xcode, selecione o esquema de destino (destination scheme) para o dispositivo iOS ou simulador que você deseja usar.
+Clique no botão "Build" (ou use o atalho Command-B) para compilar o projeto.
+
+## Execução:
+Escolha o dispositivo iOS ou simulador no qual deseja executar o projeto (por exemplo, um dispositivo físico conectado ou um simulador iOS).
+Pressione o botão "Run" (ou use o atalho Command-R) para iniciar o projeto.
+
+# Autor
+
+Felipe Augusto Correia
+
+https://www.linkedin.com/in/felipe-augusto-a16233116/
+
+
