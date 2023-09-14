@@ -31,15 +31,13 @@ class PokemonCollectionViewCellScreen: UIView {
     lazy var pokemonImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(systemName: "person")
         image.contentMode = .scaleAspectFit
         return image
     }()
     
-    lazy var pokemonName: UILabel = {
+    lazy var pokemonNameLabel: UILabel = {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
-        lb.text = "Pikachu"
         lb.textAlignment = .center
         lb.clipsToBounds = true
         lb.layer.cornerRadius = 8
@@ -48,10 +46,9 @@ class PokemonCollectionViewCellScreen: UIView {
         return lb
     }()
     
-    lazy var pokemonType: UILabel = {
+    lazy var pokemonTypeLabel: UILabel = {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
-        lb.text = "Poison"
         lb.textAlignment = .center
         return lb
     }()
@@ -67,29 +64,14 @@ class PokemonCollectionViewCellScreen: UIView {
     }
     
     private func addElements() {
-//        self.addSubview(stackView)
-//        self.stackView.addArrangedSubview(self.pokemonImage)
-//        self.stackView.addArrangedSubview(self.pokemonName)
-//        self.stackView.addArrangedSubview(self.pokemonType)
-//        pokemonImage.heightAnchor.constraint(equalTo: pokemonName.heightAnchor, multiplier: 3.0).isActive = true
-        
-        
         self.addSubview(cardView)
         cardView.addSubview(pokemonImage)
-        cardView.addSubview(pokemonName)
-        cardView.addSubview(pokemonType)
+        cardView.addSubview(pokemonNameLabel)
+        cardView.addSubview(pokemonTypeLabel)
     }
     
     private func configConstrains() {
-        
         NSLayoutConstraint.activate([
-            
-//            self.stackView.topAnchor.constraint(equalTo: self.topAnchor),
-//            self.stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-//            self.stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-//            self.stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            
-            
             self.cardView.topAnchor.constraint(equalTo: self.topAnchor),
             self.cardView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             self.cardView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
@@ -100,13 +82,11 @@ class PokemonCollectionViewCellScreen: UIView {
             self.pokemonImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 10),
             self.pokemonImage.heightAnchor.constraint(equalToConstant: 150),
             
-            self.pokemonName.topAnchor.constraint(equalTo: self.pokemonImage.bottomAnchor, constant: 10),
-            self.pokemonName.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            self.pokemonNameLabel.topAnchor.constraint(equalTo: self.pokemonImage.bottomAnchor, constant: 10),
+            self.pokemonNameLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
-            self.pokemonType.topAnchor.constraint(equalTo: self.pokemonName.bottomAnchor, constant: 10),
-            self.pokemonType.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            
+            self.pokemonTypeLabel.topAnchor.constraint(equalTo: self.pokemonNameLabel.bottomAnchor, constant: 10),
+            self.pokemonTypeLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
         ])
     }
-
 }

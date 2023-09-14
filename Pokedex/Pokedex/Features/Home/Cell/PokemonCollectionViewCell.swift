@@ -6,12 +6,12 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class PokemonCollectionViewCell: UICollectionViewCell {
     
-    static let identifier: String = "PokemonCollectionViewCell"
-    
-    lazy var pokemonCollectionViewCellScreen: PokemonCollectionViewCellScreen = {
+    static let identifier: String = String(describing: PokemonCollectionViewCell.self)
+    lazy var screen: PokemonCollectionViewCellScreen = {
         let view = PokemonCollectionViewCellScreen()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -29,23 +29,27 @@ class PokemonCollectionViewCell: UICollectionViewCell {
     }
     
     private func configElements() {
-        self.contentView.addSubview(self.pokemonCollectionViewCellScreen)
+        self.contentView.addSubview(self.screen)
     }
     
     private func configScreen() {
-        pokemonCollectionViewCellScreen.clipsToBounds = true
-        pokemonCollectionViewCellScreen.layer.cornerRadius = 20
+        screen.clipsToBounds = true
+        screen.layer.cornerRadius = 20
+    }
+    
+    public func setupCell(pokemon: Pokemon) {
+        if let urlPokemon: URL = URL(string: pokemon.imageURL ?? "") {
+            screen.pokemonImage.af.setImage(withURL: urlPokemon, placeholderImage: UIImage(named: "threeButtons"))
+        }
+        screen.pokemonNameLabel.text = pokemon.name?.capitalized
     }
     
     private func configConstrains() {
-        
         NSLayoutConstraint.activate([
-            
-            self.pokemonCollectionViewCellScreen.topAnchor.constraint(equalTo: self.topAnchor),
-            self.pokemonCollectionViewCellScreen.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.pokemonCollectionViewCellScreen.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            self.pokemonCollectionViewCellScreen.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            self.screen.topAnchor.constraint(equalTo: self.topAnchor),
+            self.screen.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.screen.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.screen.bottomAnchor.constraint(equalTo: self.bottomAnchor),
         ])
     }
-    
 }
