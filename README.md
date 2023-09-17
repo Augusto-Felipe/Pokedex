@@ -13,6 +13,15 @@ Com este aplicativo, o usuário tem acesso a informações essenciais sobre vár
   <img src="https://github.com/Augusto-Felipe/Pokedex/assets/107811979/b4eaf07f-74ba-4ef2-b0ac-c8dfa4f627ae" width="300" />
 </p>
 
+## Principais Recursos
+- Pesquisa de Pokémon: Os usuários podem pesquisar Pokémon por nome para acessar rapidamente informações sobre uma espécie específica.
+
+- Detalhes dos Pokémon: O aplicativo fornece detalhes sobre cada Pokémon.
+
+- Imagens de Pokémon: Os usuários podem ver imagens de alta qualidade de cada Pokémon, permitindo uma visualização detalhada de suas aparências.
+
+- Interface Amigável: O aplicativo possui uma interface de usuário intuitiva e amigável, tornando a pesquisa de Pokémon fácil e divertida.
+
 # Tecnologias utilizadas
 - Swift
 - UIKit
