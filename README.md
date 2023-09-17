@@ -3,9 +3,7 @@
 
 # Sobre o projeto
 
-Este aplicativo foi desenvolvido com o propósito de auxiliar os usuários a obter informações abrangentes sobre uma variedade de Pokémons, incluindo seus nomes, tipos, habilidades, evoluções e descrições detalhadas.
-
-Com este aplicativo, o usuário tem acesso a informações essenciais sobre vários pokemons diretamente na palma de sua mão.
+O Pokédex é uma aplicação que permite aos fãs de Pokémon explorar o mundo dos Pokémon, pesquisar informações detalhadas sobre várias espécies de Pokémon e acompanhar suas características. É uma ferramenta essencial para treinadores Pokémon em sua jornada para se tornarem Mestres Pokémon.
 
 ## Layout
 <p align="center">
